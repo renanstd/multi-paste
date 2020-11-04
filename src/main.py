@@ -1,3 +1,4 @@
+import os
 import keyboard
 import pyperclip
 from tkinter import (
@@ -7,7 +8,8 @@ from tkinter import (
     Label,
     Text,
     LEFT,
-    RIGHT
+    RIGHT,
+    PhotoImage
 )
 
 
@@ -16,8 +18,10 @@ class App:
         self.slots = 1
         self.text_areas = {}
         self.contents = {}
-
+        dirname = os.path.dirname(__file__)
+        icon_path = os.path.join(dirname, "icon", "clipboard.png")
         main.title("Multi Paste")
+        root.iconphoto(False, PhotoImage(file=icon_path))
         main.resizable(0,0)
         self.main_frame = Frame(main).pack()
         button_add_slot = Button(
