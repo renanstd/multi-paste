@@ -8,8 +8,7 @@ from tkinter import (
     Label,
     Text,
     LEFT,
-    RIGHT,
-    PhotoImage
+    RIGHT
 )
 
 
@@ -19,9 +18,9 @@ class App:
         self.text_areas = {}
         self.contents = {}
         dirname = os.path.dirname(__file__)
-        icon_path = os.path.join(dirname, "icon", "clipboard.png")
+        icon_path = os.path.join(dirname, "icon", "clipboard.ico")
         main.title("Multi Paste")
-        root.iconphoto(False, PhotoImage(file=icon_path))
+        root.iconbitmap(icon_path)
         main.resizable(0,0)
         self.main_frame = Frame(main).pack()
         button_add_slot = Button(
